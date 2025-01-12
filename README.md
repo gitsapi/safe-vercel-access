@@ -23,5 +23,5 @@ let target = process.env.NEXT_PUBLIC_ACCESSURL;
 const PASSWORD = process.env.NEXT_PUBLIC_SAFEPWD;
 ```
 for `https://www.google.com/`, close and refresh web page is required after the first access and password verification.
-# 鸣谢
+# 基于以下项目修改
 https://github.com/gaowanlu/google
