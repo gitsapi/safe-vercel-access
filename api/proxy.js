@@ -7,7 +7,17 @@ module.exports = (req, res) => {
   // 检查是否存在 safepwd cookie 并且值等于设置的密码
   const safepwd = req.cookies.safepwd;
   if (safepwd === PASSWORD) {
-    // 如果密码正确，执行代理逻辑
+    // 如果密码正确，移除 safepwd cookie 后再转发请求
+    if (req.headers.cookie) {
+      // 从 cookie 中移除 safepwd
+      req.headers.cookie = req.headers.cookie
+        .split(';')
+        .map(cookie => cookie.trim())
+        .filter(cookie => !cookie.startsWith('safepwd='))
+        .join(';');
+    }
+
+    // 执行代理逻辑
     let target = process.env.NEXT_PUBLIC_ACCESSURL;
     
     createProxyMiddleware({
