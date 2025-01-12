@@ -1,7 +1,7 @@
 const { createProxyMiddleware } = require("http-proxy-middleware");
 
-// 设置密码
-const PASSWORD = "your_password_here"; // 替换为你想要的密码
+// 从环境变量中读取密码
+const PASSWORD = process.env.NEXT_PUBLIC_SAFEPWD;
 
 module.exports = (req, res) => {
   // 检查是否存在 safepwd cookie 并且值等于设置的密码
