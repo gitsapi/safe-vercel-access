@@ -9,7 +9,7 @@ let target = process.env.NEXT_PUBLIC_ACCESSURL;
 // 将 NEXT_PUBLIC_SAFEPWD 设置为您的密码环境变量
 const PASSWORD = process.env.NEXT_PUBLIC_SAFEPWD;
 ```
-对于 https://www.google.com/ 首次访问并验证密码后，需要关闭网页后，重新打开。
+对于 `https://www.google.com/`, 首次访问并验证密码后，需要关闭网页后，重新打开。
 
 # vercel safe access
 ## add a password for u vercel access deploy
@@ -22,4 +22,4 @@ let target = process.env.NEXT_PUBLIC_ACCESSURL;
 // set NEXT_PUBLIC_SAFEPWD as u password environment variable
 const PASSWORD = process.env.NEXT_PUBLIC_SAFEPWD;
 ```
-for https://www.google.com/, close and refresh web page is required after the first access and password verification.
+for `https://www.google.com/`, close and refresh web page is required after the first access and password verification.
