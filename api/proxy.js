@@ -8,7 +8,8 @@ module.exports = (req, res) => {
   const safepwd = req.cookies.safepwd;
   if (safepwd === PASSWORD) {
     // 如果密码正确，执行代理逻辑
-    let target = "https://www.google.com/";
+    let target = process.env.NEXT_PUBLIC_ACCESSURL;
+    
     createProxyMiddleware({
       target,
       changeOrigin: true,
